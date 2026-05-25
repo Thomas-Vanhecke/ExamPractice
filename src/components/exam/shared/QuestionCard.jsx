@@ -10,16 +10,17 @@ export default function QuestionCard({
   onAnswerOpen,
   answered,
   selectedOption,
+  correctOptionIds,
   color,
   accent,
 }) {
   const [typedAnswer, setTypedAnswer] = useState("");
-  const [submitAttempted, setSubmitAttempted] = useState(false);
 
   const isOpen = question.type === "open";
   const isMulti = question.multiSelect === true;
 
   const selectedSet = new Set(Array.isArray(selectedOption) ? selectedOption : []);
+  const correctIdSet = new Set(correctOptionIds || []);
 
   const handleOpenSubmit = () => {
     if (!typedAnswer.trim()) return;
@@ -99,11 +100,16 @@ export default function QuestionCard({
             let textColor = "#94a3b8";
             let icon = null;
 
+            const optId = opt.id;
             const isSelected = isMulti ? selectedSet.has(i) : selectedOption === i;
+            const isCorrect = answered && correctIdSet.has(optId);
+            const isWrong = answered && isSelected && !isCorrect;
 
             if (answered) {
-              if (isSelected) {
+              if (isCorrect) {
                 bg = `${color}22`; border = color; textColor = accent; icon = "✓";
+              } else if (isWrong) {
+                bg = "#7f1d1d22"; border = "#ef4444"; textColor = "#fca5a5"; icon = "✗";
               }
             } else if (isSelected) {
               bg = `${color}18`; border = color; textColor = "#f1f5f9";

@@ -10,6 +10,7 @@ export function useQuiz() {
   const [correct, setCorrect] = useState(0);
   const [scores, setScores] = useState({});
   const [activeChapterId, setActiveChapterId] = useState(null);
+  const [correctOptionIds, setCorrectOptionIds] = useState([]);
   const [chapterMeta, setChapterMeta] = useState({
     title: "",
     color: "#6366f1",
@@ -19,7 +20,6 @@ export function useQuiz() {
 
   const API_URL = "http://141.95.77.75/api/questions";
 
-  // Zet backend vraag om naar het formaat dat QuestionCard verwacht
   function transformQuestion(q) {
     return {
       id: q.id,
@@ -27,8 +27,7 @@ export function useQuiz() {
       code: q.code,
       explanation: q.explanation,
       multiSelect: q.multiSelect,
-      options: shuffle(q.options), // shuffle de opties
-      // geen answer veld meer! komt van backend via /check
+      options: shuffle(q.options),
     };
   }
 
@@ -45,7 +44,6 @@ export function useQuiz() {
       meta = { title: "Full Exam", color: "#6366f1", accent: "#818cf8" };
     } catch (e) {
       console.error("API niet bereikbaar, lokale data gebruiken", e);
-      // fallback naar lokale data
       qs = shuffle(chapters.flatMap((c) => c.questions));
       meta = { title: "Full Exam", color: "#6366f1", accent: "#818cf8" };
     }
@@ -61,6 +59,7 @@ export function useQuiz() {
     setSelectedOption(null);
     setAnswered(false);
     setCorrect(0);
+    setCorrectOptionIds([]);
     setChapterMeta(meta);
     setView("quiz");
     setLoading(false);
@@ -82,6 +81,7 @@ export function useQuiz() {
       });
       const data = await response.json();
       if (data.correct) setCorrect((c) => c + 1);
+      setCorrectOptionIds(data.correctOptionIds || []);
     } catch (e) {
       console.error("Check mislukt", e);
     }
@@ -115,6 +115,7 @@ export function useQuiz() {
       });
       const data = await response.json();
       if (data.correct) setCorrect((c) => c + 1);
+      setCorrectOptionIds(data.correctOptionIds || []);
     } catch (e) {
       console.error("Check mislukt", e);
     }
@@ -128,6 +129,7 @@ export function useQuiz() {
   }
 
   function next(chapters) {
+    setCorrectOptionIds([]);
     if (currentQ + 1 < questions.length) {
       setCurrentQ((q) => q + 1);
       setSelectedOption(null);
@@ -152,6 +154,7 @@ export function useQuiz() {
   return {
     view, questions, currentQ, selectedOption, answered,
     correct, scores, activeChapterId, chapterMeta, loading,
+    correctOptionIds,
     start, answer, toggleOption, submitMulti, answerOpen, next, goHome, retry,
   };
 }

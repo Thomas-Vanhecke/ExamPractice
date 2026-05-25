@@ -17,7 +17,7 @@ export function useQuiz() {
   });
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "http://141.95.77.75:8080/api/questions";
+  const API_URL = "http://141.95.77.75/api/questions";
 
   // Zet backend vraag om naar het formaat dat QuestionCard verwacht
   function transformQuestion(q) {

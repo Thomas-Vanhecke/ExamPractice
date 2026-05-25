@@ -102,6 +102,9 @@ export default function Programming2Exam() {
               questionIndex={quiz.currentQ}
               total={quiz.questions.length}
               onAnswer={(i) => quiz.answer(i)}
+              onToggle={(i) => quiz.toggleOption(i)}
+              onSubmitMulti={() => quiz.submitMulti()}
+              onAnswerOpen={(text) => quiz.answerOpen(text)}
               answered={quiz.answered}
               selectedOption={quiz.selectedOption}
               color={quiz.chapterMeta.color}

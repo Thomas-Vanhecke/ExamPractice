@@ -115,6 +115,7 @@ export default function NetworkExam() {
               onSubmitMulti={() => quiz.submitMulti()}
               onAnswerOpen={(text) => quiz.answerOpen(text)}
               answered={quiz.answered}
+              correctOptionIds={quiz.correctOptionIds}
               selectedOption={quiz.selectedOption}
               color={quiz.chapterMeta.color}
               accent={quiz.chapterMeta.accent}

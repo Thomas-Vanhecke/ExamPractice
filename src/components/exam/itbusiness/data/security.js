@@ -1,0 +1,143 @@
+const security = {
+  id: "security",
+  title: "Security & Informatiebeveiliging",
+  icon: "🔐",
+  color: "#ef4444",
+  accent: "#f87171",
+  questions: [
+    {
+      id: "secq1",
+      question: "Wat zijn de drie pijlers van informatiebeveiliging (CIA-triad)?",
+      options: [
+        "Confidentiality, Integrity, Availability",
+        "Control, Identity, Authentication",
+        "Cybersecurity, Infrastructure, Access",
+        "Compliance, Integrity, Authorization",
+      ],
+      answer: 0,
+      explanation: "De CIA-triad: Confidentiality (vertrouwelijkheid), Integrity (integriteit), Availability (beschikbaarheid).",
+    },
+    {
+      id: "secq2",
+      question: "Wat betekent Confidentiality (vertrouwelijkheid) in de CIA-triad?",
+      options: [
+        "Data is altijd beschikbaar wanneer nodig",
+        "Data is alleen toegankelijk voor geautoriseerde personen",
+        "Data is correct en ongewijzigd",
+        "Data wordt versleuteld opgeslagen",
+      ],
+      answer: 1,
+      explanation: "Confidentiality garandeert dat informatie alleen toegankelijk is voor wie daartoe bevoegd is.",
+    },
+    {
+      id: "secq3",
+      question: "Wat betekent Integrity (integriteit)?",
+      options: [
+        "Data is versleuteld",
+        "Data is juist, volledig en niet ongeautoriseerd gewijzigd",
+        "Data is altijd beschikbaar",
+        "Data is geback-upt",
+      ],
+      answer: 1,
+      explanation: "Integrity garandeert dat data accuraat en volledig is en alleen door bevoegde personen gewijzigd kan worden.",
+    },
+    {
+      id: "secq4",
+      question: "Wat betekent Availability (beschikbaarheid)?",
+      options: [
+        "Data mag door iedereen gelezen worden",
+        "Systemen en data zijn beschikbaar wanneer geautoriseerde gebruikers ze nodig hebben",
+        "Data wordt regelmatig verwijderd",
+        "Gebruikers kunnen hun wachtwoord wijzigen",
+      ],
+      answer: 1,
+      explanation: "Availability garandeert dat systemen en data bereikbaar zijn voor bevoegde gebruikers wanneer ze dat nodig hebben.",
+    },
+    {
+      id: "secq5",
+      question: "Wat is een threat (bedreiging) in informatiebeveiliging?",
+      options: [
+        "Een kwetsbaarheid in software",
+        "Een potentiële oorzaak van een ongewenste incident dat schade kan veroorzaken",
+        "Een beveiligingsmaatregel",
+        "Een beleidsdocument",
+      ],
+      answer: 1,
+      explanation: "Een threat is een potentiële oorzaak van schade, zoals een hacker, malware, natuurramp of menselijke fout.",
+    },
+    {
+      id: "secq6",
+      question: "Wat is het verschil tussen een vulnerability en een threat?",
+      options: [
+        "Ze betekenen hetzelfde",
+        "Vulnerability = zwakheid in een systeem; threat = potentiële aanvaller of oorzaak die de zwakheid uitbuit",
+        "Threat = zwakheid; vulnerability = aanvaller",
+        "Vulnerability = opzettelijke aanval; threat = technische storing",
+      ],
+      answer: 1,
+      explanation: "Vulnerability is een zwakheid (bv. ongepatchte software). Threat is de potentiële oorzaak die de kwetsbaarheid kan benutten (bv. hacker).",
+    },
+    {
+      id: "secq7",
+      question: "Wat is phishing?",
+      options: [
+        "Een type malware die bestanden versleutelt",
+        "Een social engineering aanval waarbij aanvallers zich voordoen als betrouwbare partij om gevoelige info te stelen",
+        "Een netwerkaanval die systemen overbelast",
+        "Een methode om wachtwoorden te kraken",
+      ],
+      answer: 1,
+      explanation: "Phishing is een social engineering techniek waarbij aanvallers via valse e-mails, websites of berichten proberen inloggegevens of gevoelige data te stelen.",
+    },
+    {
+      id: "secq8",
+      question: "Wat is multi-factor authentication (MFA)?",
+      options: [
+        "Inloggen met alleen een wachtwoord",
+        "Een authenticatiemethode die meerdere verificatiefactoren vereist (iets wat je weet + iets wat je hebt + iets wat je bent)",
+        "Een firewall instelling",
+        "Een encryptiealgoritme",
+      ],
+      answer: 1,
+      explanation: "MFA combineert meerdere factoren: kennis (wachtwoord), bezit (smartphone/token) en/of biometrie (vingerafdruk), waardoor accounts veel beter beveiligd zijn.",
+    },
+    {
+      id: "secq9",
+      question: "Wat is het principe van 'least privilege'?",
+      options: [
+        "Elke gebruiker krijgt beheerdersrechten",
+        "Gebruikers krijgen alleen de minimale rechten die ze nodig hebben voor hun taak",
+        "Alle gebruikers hebben dezelfde rechten",
+        "Rechten worden na elk project ingetrokken",
+      ],
+      answer: 1,
+      explanation: "Least privilege beperkt de toegangsrechten van gebruikers tot het minimum wat nodig is, om schade bij misbruik of fouten te beperken.",
+    },
+    {
+      id: "secq10",
+      question: "Wat is ransomware?",
+      options: [
+        "Software die advertenties toont",
+        "Malware die bestanden of systemen versleutelt en losgeld eist voor de decryptiesleutel",
+        "Een type phishing-aanval",
+        "Software die wachtwoorden steelt",
+      ],
+      answer: 1,
+      explanation: "Ransomware versleutelt data van het slachtoffer en eist betaling (losgeld/ransom) voor de sleutel om de data te ontsleutelen.",
+    },
+    {
+      id: "secq11",
+      question: "Wat is een firewall?",
+      options: [
+        "Een antivirusprogramma",
+        "Een beveiligingssysteem dat inkomend en uitgaand netwerkverkeer controleert en filtert op basis van regels",
+        "Een back-upsysteem",
+        "Een wachtwoordmanager",
+      ],
+      answer: 1,
+      explanation: "Een firewall bewaakt netwerkverkeer en blokkeert ongeautoriseerde toegang op basis van vooraf gedefinieerde beveiligingsregels.",
+    },
+  ],
+};
+
+export default security;

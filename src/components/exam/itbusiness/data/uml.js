@@ -1,0 +1,131 @@
+const uml = {
+  id: "uml",
+  title: "UML",
+  icon: "📐",
+  color: "#8b5cf6",
+  accent: "#a78bfa",
+  questions: [
+    {
+      id: "umlq1",
+      question: "Waarvoor staat UML?",
+      options: [
+        "Universal Modelling Language",
+        "Unified Modeling Language",
+        "Unified Management Logic",
+        "Universal Management Language",
+      ],
+      answer: 1,
+      explanation: "UML staat voor Unified Modeling Language — een gestandaardiseerde taal voor het visueel beschrijven van software en systemen.",
+    },
+    {
+      id: "umlq2",
+      question: "Wat toont een use case diagram?",
+      options: [
+        "De interne klassenstructuur van software",
+        "De interacties tussen actoren (gebruikers/systemen) en de functionaliteiten (use cases) van een systeem",
+        "De volgorde van methode-aanroepen",
+        "De databasetabelstructuur",
+      ],
+      answer: 1,
+      explanation: "Een use case diagram toont welke actoren welke use cases (functionaliteiten) van een systeem kunnen gebruiken.",
+    },
+    {
+      id: "umlq3",
+      question: "Wat is een actor in een use case diagram?",
+      options: [
+        "Een klasse in de software",
+        "Een persoon, organisatie of extern systeem dat interageert met het systeem",
+        "Een database",
+        "Een methode in een klasse",
+      ],
+      answer: 1,
+      explanation: "Een actor is een externe entiteit (gebruiker, systeem) die met het systeem communiceert maar er zelf geen deel van uitmaakt.",
+    },
+    {
+      id: "umlq4",
+      question: "Wat is het verschil tussen <<include>> en <<extend>> in use case diagrammen?",
+      options: [
+        "Ze betekenen hetzelfde",
+        "<<include>> = verplichte deelfunctie die altijd uitgevoerd wordt; <<extend>> = optionele uitbreiding onder bepaalde condities",
+        "<<extend>> = verplicht; <<include>> = optioneel",
+        "<<include>> wordt gebruikt voor actoren; <<extend>> voor use cases",
+      ],
+      answer: 1,
+      explanation: "<<include>> voegt altijd verplicht een andere use case toe. <<extend>> voegt optioneel gedrag toe onder bepaalde condities.",
+    },
+    {
+      id: "umlq5",
+      question: "Wat toont een klassendiagram (class diagram)?",
+      options: [
+        "De tijdsvolgorde van berichten tussen objecten",
+        "De klassen, hun attributen, methoden en de relaties tussen klassen",
+        "De stappen in een bedrijfsproces",
+        "De netwerktopologie van een systeem",
+      ],
+      answer: 1,
+      explanation: "Een klassendiagram toont de statische structuur: klassen met attributen en methoden, en relaties zoals associatie, overerving en aggregatie.",
+    },
+    {
+      id: "umlq6",
+      question: "Wat stelt een pijl met een holle driehoekspunt voor in een klassendiagram?",
+      options: [
+        "Associatie",
+        "Aggregatie",
+        "Overerving (generalisatie) — de subklasse erft van de superklasse",
+        "Realisatie",
+      ],
+      answer: 2,
+      explanation: "Een holle driehoekspijl stelt generalisatie/overerving voor. De pijl wijst naar de superklasse.",
+    },
+    {
+      id: "umlq7",
+      question: "Wat is het verschil tussen aggregatie en compositie in UML?",
+      options: [
+        "Ze zijn identiek",
+        "Aggregatie = zwakke relatie (deel kan bestaan zonder geheel); compositie = sterke relatie (deel bestaat niet zonder geheel)",
+        "Compositie = zwakke relatie; aggregatie = sterke relatie",
+        "Aggregatie wordt gebruikt voor interfaces; compositie voor klassen",
+      ],
+      answer: 1,
+      explanation: "Aggregatie (open ruit): deel kan bestaan zonder het geheel. Compositie (gevulde ruit): deel is volledig afhankelijk van het geheel.",
+    },
+    {
+      id: "umlq8",
+      question: "Wat toont een sequentiediagram?",
+      options: [
+        "De klassenstructuur van een systeem",
+        "De tijdsvolgorde van berichten/interacties tussen objecten of componenten",
+        "De bedrijfsprocessen van een organisatie",
+        "De netwerkconfiguratie",
+      ],
+      answer: 1,
+      explanation: "Een sequentiediagram toont hoe objecten in de tijd met elkaar communiceren via berichten, met de tijd als verticale as.",
+    },
+    {
+      id: "umlq9",
+      question: "Wat is multipliciteit in een klassendiagram?",
+      options: [
+        "Het aantal methoden in een klasse",
+        "De aanduiding hoeveel objecten van een klasse gerelateerd zijn aan objecten van een andere klasse (bv. 1..*, 0..1)",
+        "De overerving tussen klassen",
+        "De zichtbaarheid van attributen",
+      ],
+      answer: 1,
+      explanation: "Multipliciteit geeft aan hoeveel instanties deelnemen aan een relatie: 1 (exact één), 0..1 (nul of één), 1..* (één of meer), * (nul of meer).",
+    },
+    {
+      id: "umlq10",
+      question: "Wat betekent het + teken voor een attribuut of methode in UML?",
+      options: [
+        "Private — alleen zichtbaar binnen de klasse",
+        "Public — zichtbaar voor alle klassen",
+        "Protected — zichtbaar voor subklassen",
+        "Static — behoort aan de klasse zelf",
+      ],
+      answer: 1,
+      explanation: "In UML: + = public, - = private, # = protected, ~ = package.",
+    },
+  ],
+};
+
+export default uml;

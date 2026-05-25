@@ -1,0 +1,143 @@
+const projectmanagement = {
+  id: "projectmanagement",
+  title: "Project Management & Agile",
+  icon: "📋",
+  color: "#14b8a6",
+  accent: "#2dd4bf",
+  questions: [
+    {
+      id: "pmq1",
+      question: "Wat zijn de drie klassieke beperkingen van een project (de 'triple constraint')?",
+      options: [
+        "Kwaliteit, communicatie en risico",
+        "Scope, tijd en kost",
+        "Resources, planning en budget",
+        "Team, technologie en tijdlijn",
+      ],
+      answer: 1,
+      explanation: "De triple constraint (ijzeren driehoek): scope (wat), tijd (wanneer klaar) en kost (voor hoeveel). Wijzigen van één beïnvloedt de andere twee.",
+    },
+    {
+      id: "pmq2",
+      question: "Wat is een business case?",
+      options: [
+        "Een technisch implementatieplan",
+        "Een document dat de rechtvaardiging voor een project beschrijft: probleem, oplossingen, kosten, baten en risico's",
+        "Een juridisch contract tussen klant en leverancier",
+        "Een projectplanning in Gantt-formaat",
+      ],
+      answer: 1,
+      explanation: "Een business case onderbouwt waarom een project gedaan moet worden: het beschrijft het probleem, alternatieven, verwachte kosten en baten.",
+    },
+    {
+      id: "pmq3",
+      question: "Wat is het verschil tussen Waterfall en Agile projectmanagement?",
+      options: [
+        "Ze zijn identiek maar gebruiken andere terminologie",
+        "Waterfall = sequentiële fasen (alles vooraf gepland); Agile = iteratief en incrementeel (aanpasbaar aan verandering)",
+        "Agile = sequentieel; Waterfall = iteratief",
+        "Waterfall wordt alleen voor IT gebruikt; Agile voor bouw",
+      ],
+      answer: 1,
+      explanation: "Waterfall werkt in vaste opeenvolgende fasen. Agile werkt in korte iteraties (sprints) met continue feedback en aanpassing aan veranderende requirements.",
+    },
+    {
+      id: "pmq4",
+      question: "Wat is Scrum?",
+      options: [
+        "Een waterval projectmethode",
+        "Een Agile framework met vaste iteraties (sprints), rollen en ceremonies voor het leveren van software",
+        "Een planningssoftware",
+        "Een risicoanalysetechniek",
+      ],
+      answer: 1,
+      explanation: "Scrum is een lichtgewicht Agile framework met sprints (1-4 weken), vaste rollen (Product Owner, Scrum Master, Dev Team) en ceremonies (Daily, Sprint Review, Retrospective).",
+    },
+    {
+      id: "pmq5",
+      question: "Wat is de rol van de Product Owner in Scrum?",
+      options: [
+        "Het technisch leiden van het ontwikkelteam",
+        "Het beheren van de product backlog en prioriteiten bepalen vanuit klant-/businessperspectief",
+        "Het faciliteren van Scrum ceremonies",
+        "Het schrijven van alle code",
+      ],
+      answer: 1,
+      explanation: "De Product Owner beheert de product backlog, bepaalt prioriteiten en vertegenwoordigt de belangen van de klant/business.",
+    },
+    {
+      id: "pmq6",
+      question: "Wat is de rol van de Scrum Master?",
+      options: [
+        "Het bouwen van het product",
+        "Het verwijderen van obstakels voor het team en ervoor zorgen dat Scrum correct wordt toegepast",
+        "Het bepalen van de businessprioriteiten",
+        "Het beheren van het projectbudget",
+      ],
+      answer: 1,
+      explanation: "De Scrum Master is servant-leader: faciliteert het team, verwijdert impediments en zorgt voor naleving van het Scrum framework.",
+    },
+    {
+      id: "pmq7",
+      question: "Wat is een sprint in Scrum?",
+      options: [
+        "Een lange planningsfase van 6 maanden",
+        "Een vaste, korte iteratie (typisch 1-4 weken) waarin een potentieel leverbaar product increment gemaakt wordt",
+        "Een vergadering aan het einde van het project",
+        "Een document met alle requirements",
+      ],
+      answer: 1,
+      explanation: "Een sprint is een time-boxed iteratie (meestal 2 weken) met een vastgelegd doel en een oplevering van werkende software.",
+    },
+    {
+      id: "pmq8",
+      question: "Wat is een product backlog?",
+      options: [
+        "Een lijst van bugs in het systeem",
+        "Een geprioriteerde lijst van alle gewenste features, verbeteringen en taken voor het product",
+        "Een overzicht van voltooide taken",
+        "Een technisch architectuurdocument",
+      ],
+      answer: 1,
+      explanation: "De product backlog is een levende, geprioriteerde lijst van alles wat het product nodig heeft. De Product Owner beheert en prioriteert deze.",
+    },
+    {
+      id: "pmq9",
+      question: "Wat is een retrospective in Scrum?",
+      options: [
+        "Een vergadering om de sprint planning te doen",
+        "Een ceremony na elke sprint waarbij het team reflecteert op het proces en verbeteringen bepaalt",
+        "Een demo van het product aan de klant",
+        "Een dagelijkse standup van 15 minuten",
+      ],
+      answer: 1,
+      explanation: "De Sprint Retrospective is een ceremony na elke sprint waar het team bespreekt wat goed ging, wat beter kan en welke verbeteracties ze nemen.",
+    },
+    {
+      id: "pmq10",
+      question: "Wat zijn de vier waarden van het Agile Manifesto?",
+      options: [
+        "Planning, documentatie, contracten en processen",
+        "Individuen en interacties, werkende software, samenwerking met de klant en inspelen op verandering — boven processen, documentatie, contracten en plannen",
+        "Snelheid, kwaliteit, goedkoopheid en veiligheid",
+        "Sprints, backlogs, velocity en burndown",
+      ],
+      answer: 1,
+      explanation: "Het Agile Manifesto waardeert: Individuals and interactions over processes and tools; Working software over comprehensive documentation; Customer collaboration over contract negotiation; Responding to change over following a plan.",
+    },
+    {
+      id: "pmq11",
+      question: "Wat is een stakeholder in projectmanagement?",
+      options: [
+        "Alleen de projectsponsor",
+        "Elke persoon of groep die belang heeft bij het project of erdoor beïnvloed wordt",
+        "Alleen betalende klanten",
+        "Het projectteam exclusief",
+      ],
+      answer: 1,
+      explanation: "Stakeholders zijn alle betrokkenen: opdrachtgever, eindgebruikers, projectteam, management, externe partijen, etc.",
+    },
+  ],
+};
+
+export default projectmanagement;

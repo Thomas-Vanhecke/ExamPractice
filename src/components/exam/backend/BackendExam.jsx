@@ -106,6 +106,7 @@ export default function BackendExam() {
               color={quiz.chapterMeta.color}
             />
 
+          {quiz.loading && <div style={{ color: "#94a3b8", textAlign: "center" }}>Laden...</div>}
             <QuestionCard
               question={currentQuestion}
               questionIndex={quiz.currentQ}

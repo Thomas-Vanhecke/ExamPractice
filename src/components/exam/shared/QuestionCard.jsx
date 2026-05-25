@@ -21,10 +21,6 @@ export default function QuestionCard({
 
   const selectedSet = new Set(Array.isArray(selectedOption) ? selectedOption : []);
 
-  const correctAnswers = isMulti
-    ? new Set(Array.isArray(question.answer) ? question.answer : [question.answer])
-    : null;
-
   const handleOpenSubmit = () => {
     if (!typedAnswer.trim()) return;
     onAnswerOpen(typedAnswer.trim());
@@ -106,11 +102,8 @@ export default function QuestionCard({
             const isSelected = isMulti ? selectedSet.has(i) : selectedOption === i;
 
             if (answered) {
-              const isCorrect = isMulti ? correctAnswers.has(i) : i === question.answer;
-              if (isCorrect) {
+              if (isSelected) {
                 bg = `${color}22`; border = color; textColor = accent; icon = "✓";
-              } else if (isSelected && !isCorrect) {
-                bg = "#7f1d1d22"; border = "#ef4444"; textColor = "#fca5a5"; icon = "✗";
               }
             } else if (isSelected) {
               bg = `${color}18`; border = color; textColor = "#f1f5f9";
@@ -125,7 +118,7 @@ export default function QuestionCard({
                 <span style={{ minWidth: 26, height: 26, borderRadius: 6, background: "#0f172a", border: `1px solid ${border}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontFamily: "'Space Mono', monospace", color: textColor, flexShrink: 0 }}>
                   {icon || String.fromCharCode(65 + i)}
                 </span>
-                {opt}
+                {opt.text || opt}
               </button>
             );
           })}
@@ -133,22 +126,8 @@ export default function QuestionCard({
           {/* Bevestig knop voor multi-select */}
           {isMulti && !answered && (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6, marginTop: 6 }}>
-              {submitAttempted && selectedSet.size === 0 && (
-                <span style={{ color: "#f87171", fontSize: "0.85rem", fontFamily: "'Sora', sans-serif" }}>
-                  
-                </span>
-              )}
-              {submitAttempted && selectedSet.size > 0 && selectedSet.size < correctAnswers.size && (
-                <span style={{ color: "#fbbf24", fontSize: "0.85rem", fontFamily: "'Sora', sans-serif" }}>
-                 
-                </span>
-              )}
               <button
-                onClick={() => {
-                  setSubmitAttempted(true);
-                  if (selectedSet.size === 0) return;
-                  onSubmitMulti();
-                }}
+                onClick={onSubmitMulti}
                 style={{ background: `${color}cc`, border: "none", borderRadius: 10, padding: "0.6rem 1.4rem", color: "#0f172a", fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.9rem", cursor: "pointer", letterSpacing: 1 }}
               >
                 Bevestig →

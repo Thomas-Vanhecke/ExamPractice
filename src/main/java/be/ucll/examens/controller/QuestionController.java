@@ -18,19 +18,21 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    // GET /api/questions → alle vragen zonder antwoorden
+    // GET /api/questions → alle vragen
+    // GET /api/questions?category=backend → gefilterd op category
     @GetMapping
-    public List<Question> getAllQuestions() {
+    public List<Question> getAllQuestions(@RequestParam(required = false) String category) {
+        if (category != null) {
+            return questionService.getQuestionsByCategory(category);
+        }
         return questionService.getAllQuestions();
     }
 
-    // GET /api/questions/{id} → één vraag zonder antwoord
     @GetMapping("/{id}")
     public Question getQuestionById(@PathVariable Long id) {
         return questionService.getQuestionById(id);
     }
 
-    // POST /api/questions/{id}/check → antwoord controleren
     @PostMapping("/{id}/check")
     public Map<String, Object> checkAnswer(@PathVariable Long id, @RequestBody List<Long> optionIds) {
         return questionService.checkAnswer(id, optionIds);

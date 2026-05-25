@@ -9,7 +9,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/questions")
-@CrossOrigin(origins = {"http://jufnoortje.be", "https://jufnoortje.be"})
+@CrossOrigin(origins = "*")
 public class QuestionController {
 
     private final QuestionService questionService;

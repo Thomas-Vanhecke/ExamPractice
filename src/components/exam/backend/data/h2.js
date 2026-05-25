@@ -1,0 +1,133 @@
+const h2 = {
+  id: "h2",
+  title: "H2 In-Memory Database",
+  icon: "🗄️",
+  color: "#6366f1",
+  accent: "#818cf8",
+  questions: [
+    {
+      id: "h2q1",
+      question: "What is H2 in the context of Spring Boot?",
+      options: [
+        "A cloud database service",
+        "A lightweight in-memory relational database used for development and testing",
+        "A NoSQL document store",
+        "A connection pooling library",
+      ],
+      answer: 1,
+      explanation: "H2 is an embedded Java database that runs in-memory. It's perfect for development and tests because it requires zero external setup.",
+    },
+    {
+      id: "h2q2",
+      question: "What Maven/Gradle dependency do you need to add H2 to a Spring Boot project?",
+      options: [
+        "spring-boot-starter-h2",
+        "com.h2database:h2",
+        "org.h2:h2-embedded",
+        "spring-data-h2",
+      ],
+      answer: 1,
+      explanation: "The dependency is 'com.h2database:h2' with scope 'runtime' (or 'test').",
+    },
+    {
+      id: "h2q3",
+      question: "Which application.properties property enables the H2 browser console?",
+      options: [
+        "spring.h2.web-console=true",
+        "spring.h2.console.enabled=true",
+        "h2.console.enable=true",
+        "spring.datasource.h2-console=true",
+      ],
+      answer: 1,
+      explanation: "spring.h2.console.enabled=true enables the web UI at /h2-console by default.",
+    },
+    {
+      id: "h2q4",
+      question: "What is the default URL to access the H2 console in a browser?",
+      options: ["/h2", "/h2-console", "/database", "/admin/h2"],
+      answer: 1,
+      explanation: "The H2 console is accessible at http://localhost:8080/h2-console by default.",
+    },
+    {
+      id: "h2q5",
+      question: "Which property sets the H2 datasource URL for an in-memory database?",
+      options: [
+        "spring.datasource.url=jdbc:h2:mem:testdb",
+        "spring.h2.url=mem:testdb",
+        "spring.datasource.h2=memory://testdb",
+        "h2.datasource.url=testdb",
+      ],
+      answer: 0,
+      explanation: "spring.datasource.url=jdbc:h2:mem:testdb configures an in-memory H2 database named 'testdb'.",
+    },
+    {
+      id: "h2q6",
+      question: "What does 'in-memory' mean for H2?",
+      options: [
+        "The database is stored in a file on disk",
+        "The database only exists while the application is running — all data is lost on restart",
+        "The database is stored in the cloud",
+        "The database compresses data in memory",
+      ],
+      answer: 1,
+      explanation: "In-memory means the database lives in RAM. When the JVM stops, all data is gone. Perfect for tests, not for production.",
+    },
+    {
+      id: "h2q7",
+      question: "What file can you create to pre-populate an H2 database on startup?",
+      options: [
+        "startup.sql in /resources",
+        "data.sql in /resources",
+        "init.sql in /static",
+        "seed.sql in /config",
+      ],
+      answer: 1,
+      explanation: "Spring Boot automatically executes data.sql (and schema.sql) found in src/main/resources on startup.",
+    },
+    {
+      id: "h2q8",
+      question: "What property sets the H2 console path to a custom URL like /admin/db?",
+      options: [
+        "spring.h2.console.url=/admin/db",
+        "spring.h2.console.path=/admin/db",
+        "h2.web.path=/admin/db",
+        "spring.datasource.console=/admin/db",
+      ],
+      answer: 1,
+      explanation: "spring.h2.console.path=/admin/db changes the URL where the H2 console is served.",
+    },
+    {
+      id: "h2q9",
+      question: "Which Spring Boot starter automatically configures a DataSource, JPA, and Hibernate?",
+      options: [
+        "spring-boot-starter-h2",
+        "spring-boot-starter-data-jpa",
+        "spring-boot-starter-jdbc",
+        "spring-boot-starter-orm",
+      ],
+      answer: 1,
+      explanation: "spring-boot-starter-data-jpa pulls in Hibernate, Spring Data JPA, and auto-configures the DataSource.",
+    },
+    {
+      id: "h2q10",
+      question: "What does spring.jpa.hibernate.ddl-auto=create-drop do?",
+      options: [
+        "Only creates tables, never drops them",
+        "Creates the schema on startup and drops it when the application stops",
+        "Validates the schema without changing it",
+        "Updates the schema without dropping existing data",
+      ],
+      answer: 1,
+      explanation: "create-drop is ideal for testing: it creates the schema when the app starts and drops it on shutdown.",
+    },
+    {
+      id: "h2q11",
+      question: "What is the default JDBC username for H2?",
+      options: ["root", "admin", "sa", "h2user"],
+      answer: 2,
+      explanation: "The default H2 username is 'sa' (system administrator) with an empty password.",
+    },
+  ],
+};
+
+export default h2;

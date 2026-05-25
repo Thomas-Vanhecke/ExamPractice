@@ -1,0 +1,143 @@
+const bpmn = {
+  id: "bpmn",
+  title: "BPMN – Procesmodellering",
+  icon: "🔄",
+  color: "#f97316",
+  accent: "#fb923c",
+  questions: [
+    {
+      id: "bpmnq1",
+      question: "Waarvoor staat BPMN?",
+      options: [
+        "Business Process Management Network",
+        "Business Process Model and Notation",
+        "Basic Process Modeling Notation",
+        "Business Project Management Notation",
+      ],
+      answer: 1,
+      explanation: "BPMN staat voor Business Process Model and Notation — een standaard voor het grafisch weergeven van bedrijfsprocessen.",
+    },
+    {
+      id: "bpmnq2",
+      question: "Wat stelt een afgeronde rechthoek (task/activiteit) voor in BPMN?",
+      options: [
+        "Een beslissing",
+        "Een concrete werkeenheid of taak die uitgevoerd wordt",
+        "Een start- of eindevent",
+        "Een berichtstroom",
+      ],
+      answer: 1,
+      explanation: "Een afgeronde rechthoek (task) stelt een atomaire activiteit voor die uitgevoerd wordt door een persoon of systeem.",
+    },
+    {
+      id: "bpmnq3",
+      question: "Wat stelt een cirkel met een dunne rand voor in BPMN?",
+      options: [
+        "Een intermediair event",
+        "Een start event — het begin van een proces",
+        "Een end event",
+        "Een gateway",
+      ],
+      answer: 1,
+      explanation: "Een cirkel met dunne rand = start event. Dikke rand = end event. Dubbele rand = intermediair event.",
+    },
+    {
+      id: "bpmnq4",
+      question: "Wat is een gateway in BPMN?",
+      options: [
+        "Een externe dienst die aangeroepen wordt",
+        "Een ruitvorm die de procesflow splitst of samenvoegt op basis van condities",
+        "Een boodschapobject",
+        "Een swimlane",
+      ],
+      answer: 1,
+      explanation: "Een gateway (ruitsymbool) beheert de procesflow: het kan splitsen (meerdere paden) of samenvoegen op basis van condities of parallellisme.",
+    },
+    {
+      id: "bpmnq5",
+      question: "Wat is het verschil tussen een exclusive gateway (XOR) en een parallel gateway (AND)?",
+      options: [
+        "Ze zijn identiek",
+        "XOR = slechts één pad wordt gevolgd (exclusief of); AND = alle paden worden tegelijkertijd gevolgd",
+        "AND = slechts één pad; XOR = alle paden",
+        "XOR wordt gebruikt voor loops; AND voor splits",
+      ],
+      answer: 1,
+      explanation: "XOR gateway (X): precies één pad wordt gevolgd afhankelijk van een conditie. AND gateway (+): alle uitgaande paden worden tegelijk genomen.",
+    },
+    {
+      id: "bpmnq6",
+      question: "Wat is een swimlane (pool/lane) in BPMN?",
+      options: [
+        "Een type gateway",
+        "Een visuele container die activiteiten groepeert per deelnemer, rol of afdeling",
+        "Een verbindingspijl",
+        "Een tussentijds event",
+      ],
+      answer: 1,
+      explanation: "Swimlanes (pools en lanes) groeperen activiteiten per organisatie, afdeling of rol, wat duidelijk maakt wie verantwoordelijk is voor welke stap.",
+    },
+    {
+      id: "bpmnq7",
+      question: "Wat is een sequence flow in BPMN?",
+      options: [
+        "Een stippellijn tussen twee pools",
+        "Een doorlopende pijl die de volgorde van activiteiten binnen één pool aangeeft",
+        "Een berichtstroom tussen twee organisaties",
+        "Een annotatie bij een activiteit",
+      ],
+      answer: 1,
+      explanation: "Sequence flow (volle pijl) verbindt activiteiten, events en gateways binnen dezelfde pool en geeft de uitvoeringsvolgorde aan.",
+    },
+    {
+      id: "bpmnq8",
+      question: "Wat is een message flow in BPMN?",
+      options: [
+        "Een pijl binnen één pool",
+        "Een stippellijn die communicatie/berichten tussen twee aparte pools (organisaties) weergeeft",
+        "Een fout-event",
+        "Een compenserende actie",
+      ],
+      answer: 1,
+      explanation: "Message flow (stippelpijl) loopt altijd tussen twee verschillende pools en stelt de uitwisseling van berichten voor tussen organisaties.",
+    },
+    {
+      id: "bpmnq9",
+      question: "Wat stelt een cirkel met een dikke rand voor in BPMN?",
+      options: [
+        "Start event",
+        "Intermediair event",
+        "End event — het einde van een procespad",
+        "Een gateway",
+      ],
+      answer: 2,
+      explanation: "Een cirkel met dikke/dubbele rand is een end event en markeert het einde van een procespad.",
+    },
+    {
+      id: "bpmnq10",
+      question: "Waarvoor dient BPMN 2.0 ten opzichte van BPMN 1.x?",
+      options: [
+        "BPMN 2.0 is enkel voor technische ontwikkelaars",
+        "BPMN 2.0 voegt een uitvoerbaar XML-formaat toe zodat processen direct door een process engine uitgevoerd kunnen worden",
+        "BPMN 2.0 schrapt gateways",
+        "BPMN 2.0 vervangt UML volledig",
+      ],
+      answer: 1,
+      explanation: "BPMN 2.0 introduceert een standaard XML-serialisatie zodat procesmodellen direct door BPMS-engines (zoals Camunda) uitgevoerd kunnen worden.",
+    },
+    {
+      id: "bpmnq11",
+      question: "Wat is een inclusive gateway (OR) in BPMN?",
+      options: [
+        "Altijd één pad",
+        "Altijd alle paden",
+        "Eén of meer paden worden gevolgd afhankelijk van condities",
+        "Geen paden — stopt het proces",
+      ],
+      answer: 2,
+      explanation: "Inclusive gateway (O): één of meer uitgaande paden kunnen gevolgd worden, afhankelijk van welke condities True zijn.",
+    },
+  ],
+};
+
+export default bpmn;

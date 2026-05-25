@@ -6,7 +6,9 @@ import be.ucll.examens.repository.AnswerRepository;
 import be.ucll.examens.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class QuestionService {
@@ -30,12 +32,17 @@ public class QuestionService {
                 .orElseThrow(() -> new RuntimeException("Question not found"));
     }
 
-    // Controleert of het antwoord correct is
-    public boolean checkAnswer(Long questionId, List<Long> optionIds) {
+    // Controleert of het antwoord correct is en geeft correcte optie IDs terug
+    public Map<String, Object> checkAnswer(Long questionId, List<Long> optionIds) {
         List<Answer> correctAnswers = answerRepository.findByQuestionId(questionId);
         List<Long> correctIds = correctAnswers.stream()
                 .map(a -> a.getCorrectOption().getId())
                 .toList();
-        return correctIds.containsAll(optionIds) && optionIds.containsAll(correctIds);
+        boolean correct = correctIds.containsAll(optionIds) && optionIds.containsAll(correctIds);
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("correct", correct);
+        result.put("correctOptionIds", correctIds);
+        return result;
     }
 }

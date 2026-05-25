@@ -32,8 +32,7 @@ public class QuestionController {
 
     // POST /api/questions/{id}/check → antwoord controleren
     @PostMapping("/{id}/check")
-    public Map<String, Boolean> checkAnswer(@PathVariable Long id, @RequestBody List<Long> optionIds) {
-        boolean correct = questionService.checkAnswer(id, optionIds);
-        return Map.of("correct", correct);
+    public Map<String, Object> checkAnswer(@PathVariable Long id, @RequestBody List<Long> optionIds) {
+        return questionService.checkAnswer(id, optionIds);
     }
 }

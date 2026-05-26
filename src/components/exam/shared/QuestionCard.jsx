@@ -102,10 +102,11 @@ export default function QuestionCard({
 
             const optId = opt.id;
             const isSelected = isMulti ? selectedSet.has(i) : selectedOption === i;
-            const isCorrect = answered && correctIdSet.has(optId);
-            const isWrong = answered && isSelected && !isCorrect;
+            const hasResult = answered && correctOptionIds && correctOptionIds.length > 0;
+            const isCorrect = hasResult && correctIdSet.has(optId);
+            const isWrong = hasResult && isSelected && !isCorrect;
 
-            if (answered) {
+            if (hasResult) {
               if (isCorrect) {
                 bg = `${color}22`; border = color; textColor = accent; icon = "✓";
               } else if (isWrong) {

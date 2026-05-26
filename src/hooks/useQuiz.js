@@ -18,7 +18,7 @@ export function useQuiz() {
   });
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "http://141.95.77.75/api/questions";
+  const API_URL = "https://api.jufnoortje.be/api/questions";
 
   const categoryMap = {
     // Backend

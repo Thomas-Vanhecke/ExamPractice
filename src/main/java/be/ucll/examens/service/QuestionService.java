@@ -21,18 +21,19 @@ public class QuestionService {
         this.answerRepository = answerRepository;
     }
 
-    // Geeft alle vragen terug ZONDER antwoorden
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
     }
 
-    // Geeft één vraag terug ZONDER antwoord
+    public List<Question> getQuestionsByCategory(String category) {
+        return questionRepository.findByCategory(category);
+    }
+
     public Question getQuestionById(Long id) {
         return questionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Question not found"));
     }
 
-    // Controleert of het antwoord correct is en geeft correcte optie IDs terug
     public Map<String, Object> checkAnswer(Long questionId, List<Long> optionIds) {
         List<Answer> correctAnswers = answerRepository.findByQuestionId(questionId);
         List<Long> correctIds = correctAnswers.stream()

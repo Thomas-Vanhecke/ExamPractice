@@ -20,6 +20,36 @@ export function useQuiz() {
 
   const API_URL = "http://141.95.77.75/api/questions";
 
+  const categoryMap = {
+    // Backend
+    apirequest: "backend",
+    springboot: "backend",
+    jpa: "backend",
+    h2: "backend",
+    practical: "backend",
+    // Programming 2
+    oo: "programming2-oo",
+    functional: "programming2-functional",
+    testing: "programming2-testing",
+    dataprocessing: "programming2-dataprocessing",
+    // Computer Networks
+    m1: "networks-m1",
+    m2: "networks-m2",
+    m4: "networks-m4",
+    m11: "networks-m11",
+    osi: "networks-osi",
+    commands: "networks-commands",
+    ipconversion: "networks-ipconversion",
+    // IT Business
+    intro: "itbusiness-intro",
+    uml: "itbusiness-uml",
+    bpmn: "itbusiness-bpmn",
+    analysis: "itbusiness-analysis",
+    security: "itbusiness-security",
+    projectmanagement: "itbusiness-pm",
+    ictai: "itbusiness-ictai",
+  };
+
   function transformQuestion(q) {
     return {
       id: q.id,
@@ -37,7 +67,9 @@ export function useQuiz() {
     let meta;
 
     try {
-      const response = await fetch(API_URL);
+      const category = categoryMap[chapterId] || null;
+      const url = category ? `${API_URL}?category=${category}` : API_URL;
+      const response = await fetch(url);
       const data = await response.json();
       const transformed = data.map(transformQuestion);
       qs = shuffle(transformed);

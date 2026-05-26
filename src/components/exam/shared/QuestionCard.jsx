@@ -119,7 +119,7 @@ export default function QuestionCard({
               <button
                 key={i}
                 onClick={() => handleOptionClick(i)}
-                style={{ background: bg, border: `1.5px solid ${border}`, borderRadius: 10, padding: "0.8rem 1.2rem", cursor: answered ? "default" : "pointer", textAlign: "left", color: textColor, fontSize: "0.95rem", fontFamily: "'Sora', sans-serif", display: "flex", alignItems: "center", gap: 10, transition: "all 0.2s ease" }}
+                style={{ background: bg, border: `1.5px solid ${border}`, borderRadius: 10, padding: "0.8rem 1.2rem", cursor: answered ? "default" : "pointer", textAlign: "left", color: textColor, fontSize: "0.95rem", fontFamily: "'Sora', sans-serif", display: "flex", alignItems: "center", gap: 10, transition: "all 0.2s ease", wordBreak: "break-word", overflow: "hidden"}}
               >
                 <span style={{ minWidth: 26, height: 26, borderRadius: 6, background: "#0f172a", border: `1px solid ${border}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontFamily: "'Space Mono', monospace", color: textColor, flexShrink: 0 }}>
                   {icon || String.fromCharCode(65 + i)}
